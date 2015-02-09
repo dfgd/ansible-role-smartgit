@@ -1,2 +1,16 @@
 ---
 # tasks file for ansible-role-smartgit
+
+# -------------
+# Install and configure SmartGit
+# -------------
+- name: ensure SmartGit repository from PPA and install its signing key.
+  sudo: Yes
+  apt_repository: repo='ppa:eugenesan/ppa'
+
+- name: ensure SmartGit installed
+  sudo: Yes
+  apt: >
+    name=smartgit
+    state=present
+    update_cache=Yes
