@@ -10,6 +10,7 @@
     name=openjdk-7-jre
     state=present
     update_cache=yes
+    cache_valid_time=86400
 
 - name: ensure SmartGit repository from PPA and install its signing key.
   sudo: Yes
@@ -21,3 +22,4 @@
     name=smartgit
     state=present
     update_cache=Yes
+    cache_valid_time=86400    
