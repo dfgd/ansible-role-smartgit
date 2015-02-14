@@ -6,7 +6,7 @@ Installs SmartGit for Ubuntu from PPA.
 Requirements
 ------------
 
-This will install without java. However, you cannot run SmartGit without Java. I added  geerlingguy.java as a dependency.
+Linux?
 
 Role Variables
 --------------
@@ -16,7 +16,7 @@ None
 Dependencies
 ------------
 
-This will install without java. However, you cannot run SmartGit without Java. I added  geerlingguy.java as a dependency.
+None.
 
 Example Playbook
 -------------------------
