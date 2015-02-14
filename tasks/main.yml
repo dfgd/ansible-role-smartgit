@@ -4,6 +4,13 @@
 # -------------
 # Install and configure SmartGit
 # -------------
+- name: ensure Java 7 installed
+  sudo: Yes
+  apt: >
+    name=openjdk-7-jre
+    state=present
+    update_cache=yes
+
 - name: ensure SmartGit repository from PPA and install its signing key.
   sudo: Yes
   apt_repository: repo='ppa:eugenesan/ppa'
