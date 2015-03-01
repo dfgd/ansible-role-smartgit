@@ -2,24 +2,10 @@
 # tasks file for ansible-role-smartgit
 
 # -------------
-# Install and configure SmartGit
+# Platform conditional install and configuration
 # -------------
-- name: ensure Java 7 installed
-  sudo: Yes
-  apt: >
-    name=openjdk-7-jre
-    state=present
-    update_cache=yes
-    cache_valid_time=86400
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
 
-- name: ensure SmartGit repository from PPA and install its signing key.
-  sudo: Yes
-  apt_repository: repo='ppa:eugenesan/ppa'
-
-- name: ensure SmartGit installed
-  sudo: Yes
-  apt: >
-    name=smartgit
-    state=present
-    update_cache=Yes
-    cache_valid_time=86400    
+- include: setup-Darwin.yml
+  when:  ansible_os_family == 'Darwin'
