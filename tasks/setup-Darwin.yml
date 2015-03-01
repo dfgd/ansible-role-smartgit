@@ -1,0 +1,18 @@
+---
+# Darwin (Mac OS X) tasks file for ansible-role-smartgit
+
+# -------------
+# Install and configure Dependencies
+# -------------
+- name: Darwin | ensure Java present
+  homebrew_cask: >
+    name=java
+    state=present
+
+# -------------
+# Install and configure SmartGit
+# -------------
+- name: Darwin | ensure SmartGit present
+  homebrew_cask: >
+    name=smartgit
+    state=present
