@@ -1,5 +1,7 @@
 Ansible Role: SmartGit
 ========
+[![Build Status](https://travis-ci.org/cmprescott/ansible-role-smartgit.svg?branch=master)](https://travis-ci.org/cmprescott/ansible-role-smartgit)
+
 
 Installs SmartGit.
 
