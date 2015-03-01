@@ -1,22 +1,31 @@
-SmartGit
+Ansible Role: SmartGit
 ========
 
-Installs SmartGit for Ubuntu from PPA.
+Installs SmartGit.
 
 Requirements
 ------------
 
-Linux?
+Debian (Linux): None
+
+Darwin (OS X): Homebrew
 
 Role Variables
 --------------
 
-None
+```
+# --------
+# Debian based default repo
+# --------
+smartgit_debian_ppa_repo: ppa:eugenesan/ppa
+```
 
 Dependencies
 ------------
 
-None.
+Debian (Linux): None
+
+Darwin (OS X): If you don't have homebrew; use an Ansible role like geerlingguy.homebrew to install it
 
 Example Playbook
 -------------------------
