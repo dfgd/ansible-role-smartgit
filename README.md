@@ -34,7 +34,7 @@ Example Playbook
 
     - hosts: development
       roles:
-         role: smartgit
+        - { role: ansible-role-smartgit, sudo: Yes }
 
 License
 -------
