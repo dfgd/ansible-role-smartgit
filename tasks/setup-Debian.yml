@@ -5,7 +5,6 @@
 # Install and configure Dependencies
 # -------------
 - name: Debian | ensure Java 7 present
-  sudo: Yes
   apt: >
     name=openjdk-7-jre
     state=present
@@ -16,11 +15,9 @@
 # Install and configure SmartGit
 # -------------
 - name: Debian | ensure SmartGit PPA repo present
-  sudo: Yes
   apt_repository: repo='{{ smartgit_debian_ppa_repo }}'
 
 - name: Debian | ensure SmartGit present
-  sudo: Yes
   apt: >
     name=smartgit
     state=present
