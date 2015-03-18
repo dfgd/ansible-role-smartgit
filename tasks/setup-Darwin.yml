@@ -2,7 +2,7 @@
 # Darwin (Mac OS X) tasks file for ansible-role-smartgit
 
 # -------------
-# Install and configure SmartGit
+# Install SmartGit
 # -------------
 - name: Darwin | ensure SmartGit present
   homebrew_cask: >
