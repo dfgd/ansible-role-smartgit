@@ -5,6 +5,8 @@ Ansible Role: SmartGit
 
 Installs SmartGit.
 
+TODO: Consider Java dependency handling
+
 Requirements
 ------------
 
