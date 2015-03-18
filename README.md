@@ -8,9 +8,9 @@ Installs SmartGit.
 Requirements
 ------------
 
-Debian (Linux): None
-
 Darwin (OS X): Homebrew
+
+Ubuntu (Linux): None
 
 Role Variables
 --------------
@@ -19,15 +19,15 @@ Role Variables
 # --------
 # Debian based default repo
 # --------
-smartgit_debian_ppa_repo: ppa:eugenesan/ppa
+smartgit_ubuntu_ppa_repo: ppa:eugenesan/ppa
 ```
 
 Dependencies
 ------------
 
-Debian (Linux): None
-
 Darwin (OS X): If you don't have homebrew; use an Ansible role like geerlingguy.homebrew to install it
+
+Ubuntu (Linux): None
 
 Example Playbook
 -------------------------

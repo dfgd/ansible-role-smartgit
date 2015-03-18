@@ -1,0 +1,25 @@
+---
+# Ubuntu tasks file for ansible-role-smartgit
+
+# -------------
+# Install and configure Dependencies
+# -------------
+- name: Ubuntu | ensure Java 7 present
+  apt: >
+    name=openjdk-7-jre
+    state=present
+    update_cache=yes
+    cache_valid_time=86400
+
+# -------------
+# Install and configure SmartGit
+# -------------
+- name: Ubuntu | ensure SmartGit PPA repo present
+  apt_repository: repo='{{ smartgit_ubuntu_ppa_repo }}'
+
+- name: Ubuntu | ensure SmartGit present
+  apt:
+    name: smartgit
+    state: present
+    update_cache: Yes
+    cache_valid_time: 86400

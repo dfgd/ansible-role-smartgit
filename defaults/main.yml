@@ -2,6 +2,6 @@
 # defaults file for ansible-role-smartgit
 
 # --------
-# Debian based default repo
+# Ubuntu default repo
 # --------
-smartgit_debian_ppa_repo: ppa:eugenesan/ppa
+smartgit_ubuntu_ppa_repo: ppa:eugenesan/ppa
