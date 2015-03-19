@@ -1,0 +1,29 @@
+---
+# Debian tasks file for ansible-role-smartgit
+
+# -------------
+# Install SmartGit
+# -------------
+- name: Debian | check for installation 
+  stat: path=/usr/share/smartgit/bin/smartgit.sh
+  register: smargit_bin
+
+- name: Debian | ensure download destination writable
+  file:
+    path: "{{ smargit_debian_dir_download }}"
+    state: directory
+    mode: "u=rwx"
+    owner: "{{ ansible_ssh_user }}"
+  when: not smargit_bin.stat.exists
+
+- name: Debian | download installer
+  get_url:
+    url: "{{ smartgit_debian_url }}"
+    dest: "{{ smartgit_debian_dir_download }}/smartgit.deb"
+  when: not smargit_bin.stat.exists
+
+- name: Debian | run the installer
+  apt:
+    deb: /tmp/smartgit.deb
+  when: not smargit_bin.stat.exists
+    
