@@ -3,11 +3,16 @@ galaxy_info:
   author: Prescott Chris
   description: Installs SmartGit
   license: BSD
-  min_ansible_version: 1.2
+  min_ansible_version: 1.6
   platforms:
    - name: Darwin
      versions:
-     - all
+     - Leopard
+     - Snow Leopard
+     - Lion
+     - Mountain Lion
+     - Mavericks
+     - Yosemite
    - name: Ubuntu
      versions:
      - all

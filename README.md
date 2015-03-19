@@ -12,7 +12,7 @@ NOTE: OS X already includes JRE and Git dependencies
 Requirements
 ------------
 
-Darwin (OS X): Mac OS 10.5+
+Darwin (OS X): Mac OS 10.5+ (Leopard|Snow Leopard|Lion|Mountain Lion|Mavericks|Yosemite)
 
 Debian (Linux): all
 
