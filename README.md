@@ -5,21 +5,31 @@ Ansible Role: SmartGit
 
 Installs SmartGit.
 
-TODO: Consider Java dependency handling
+TODO: Consider Java & Git dependency handling.
+
+NOTE: OS X already includes JRE and Git dependencies
 
 Requirements
 ------------
 
-Darwin (OS X): Homebrew
+Darwin (OS X): Mac OS 10.5+
 
-Ubuntu (Linux): None
+Debian (Linux): all
+
+Ubuntu (Linux): all
 
 Role Variables
 --------------
 
 ```
 # --------
-# Debian based default repo
+# Debian defaults
+# --------
+smartgit_debian_url: http://www.syntevo.com/downloads/smartgit/smartgit-6_5_6.deb
+smartgit_debian_dir_download: /tmp
+
+# --------
+# Ubuntu defaults
 # --------
 smartgit_ubuntu_ppa_repo: ppa:eugenesan/ppa
 ```
@@ -27,9 +37,11 @@ smartgit_ubuntu_ppa_repo: ppa:eugenesan/ppa
 Dependencies
 ------------
 
-Darwin (OS X): If you don't have homebrew; use an Ansible role like geerlingguy.homebrew to install it
+Darwin (OS X): Homebrew
 
-Ubuntu (Linux): None
+Debian (Linux): JRE 1.7+, git
+
+Ubuntu (Linux): JRE 1.7+, git
 
 Example Playbook
 -------------------------
