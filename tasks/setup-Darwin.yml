@@ -5,6 +5,6 @@
 # Install SmartGit
 # -------------
 - name: Darwin | ensure SmartGit present
-  homebrew_cask: >
-    name=smartgit
-    state=present
+  homebrew_cask:
+    name: smartgit
+    state: present
