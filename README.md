@@ -2,7 +2,7 @@ Ansible Role: SmartGit
 ========
 [![Build Status](https://travis-ci.org/cmprescott/ansible-role-smartgit.svg?branch=master)](https://travis-ci.org/cmprescott/ansible-role-smartgit)
 
- Installs SmartGit.
+Installs SmartGit.
 
 Requirements
 ------------
@@ -13,12 +13,12 @@ Requirements
   - **Debian:** all
   - **Ubuntu:** all
 
- **TODO:** Generic .tar.gz for larger OS footprint
+**TODO:** Generic .tar.gz for larger OS footprint
 
 Role Variables
 --------------
 
- OS-level details should have you covered, but just in case
+OS-level details should have you covered, but just in case
 
 ```yaml
 smartgit_pkg_install_using: ( Debian_dpkg | MacOSX_homebrew | Ubuntu_apt )
@@ -32,9 +32,9 @@ Dependencies
 - **Darwin (Mac OS X)**: homebrew
 - **Linux**: JRE 1.7+, git
 
- **TODO:** Java & Git dependency handling.
+**TODO:** Java & Git dependency handling.
 
- **NOTE TO SELF:** OS X already includes JRE and Git dependencies
+**NOTE TO SELF:** OS X already includes JRE and Git dependencies
 
 Example Playbook
 -------------------------
@@ -48,9 +48,9 @@ Example Playbook
 License
 -------
 
- BSD
+BSD
 
 Author Information
 ------------------
 
- Prescott Chris
+Prescott Chris
