@@ -5,10 +5,8 @@ galaxy_info:
   license: BSD
   min_ansible_version: 1.6
   platforms:
-   - name: Darwin
+   - name: MacOSX
      versions:
-     - Leopard
-     - Snow Leopard
      - Lion
      - Mountain Lion
      - Mavericks

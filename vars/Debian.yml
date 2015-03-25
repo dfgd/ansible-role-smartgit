@@ -1,0 +1,5 @@
+---
+
+smartgit_pkg_install_using: Debian_dpkg
+smartgit_pkg_url: http://www.syntevo.com/downloads/smartgit/smartgit-6_5_6.deb
+smartgit_dir_download: /tmp

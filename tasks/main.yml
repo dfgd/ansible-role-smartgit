@@ -2,14 +2,27 @@
 # tasks file for ansible-role-smartgit
 
 # -------------
-# Platform conditional install and configuration
+# Include variables
 # -------------
-- include: setup-Darwin.yml
-  when:  ansible_os_family == 'Darwin'
-  
+- name: Get most specific variables avaiable
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "{{ ansible_system }}.yml"
+
+# -------------
+# Verify installed
+# -------------
 - include: setup-Debian.yml
-  when: ansible_distribution == 'Debian'  
-  
+  sudo: Yes
+  when: smartgit_pkg_install_using == 'Debian_dpkg'
+
+- include: setup-MacOSX.yml
+  sudo: Yes
+  when: smartgit_pkg_install_using == 'MacOSX_homebrew'
+
 - include: setup-Ubuntu.yml
-  when: ansible_distribution == 'Ubuntu'
+  sudo: Yes
+  when: smartgit_pkg_install_using == 'Ubuntu_apt'
   

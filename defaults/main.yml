@@ -1,13 +1,6 @@
 ---
 # defaults file for ansible-role-smartgit
 
-# --------
-# Debian defaults
-# --------
-smartgit_debian_url: http://www.syntevo.com/downloads/smartgit/smartgit-6_5_6.deb
-smartgit_debian_dir_download: /tmp
-
-# --------
-# Ubuntu defaults
-# --------
-smartgit_ubuntu_ppa_repo: ppa:eugenesan/ppa
+smartgit_pkg_install_using: 
+smartgit_pkg_url: 
+smartgit_dir_download: 
