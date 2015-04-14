@@ -1,10 +1,6 @@
 ---
 # defaults file for ansible-role-smartgit
 
-smartgit_pkg_install_using: 
-smartgit_pkg_url: 
-smartgit_dir_download: 
-
 # --- Remote Sources ---
 smartgit_mirror: "http://www.syntevo.com/downloads/smartgit"
 smartgit_version: "6_5_7"
@@ -20,4 +16,3 @@ smartgit_dmg_mount: "/Volumes/SmartGit {{ smartgit_version | replace('_', '.') }
 # --- apt defaults (Debian, Elementary, Ubuntu, etc) ---
 smartgit_deb_url: "{{ smartgit_mirror }}/smartgit-{{ smartgit_version }}.deb"
 smartgit_deb_tmp: "{{ smartgit_tmp }}/smartgit-{{ smartgit_version }}.deb"
-
