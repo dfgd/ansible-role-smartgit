@@ -1,5 +1,1 @@
 ---
-
-smartgit_pkg_install_using: Ubuntu_apt
-smartgit_pkg_url: ppa:eugenesan/ppa
-smartgit_dir_download:

@@ -10,8 +10,7 @@ Requirements
 - [Darwin](http://www.syntevo.com/smartgit/documentation/6.5/show?page=introduction "Mac OS X Requirements")
   - **Mac OS X:** 10.7+ (Lion|Mountain Lion|Mavericks|Yosemite)
 - [Linux](http://www.syntevo.com/smartgit/documentation/6.5/show?page=introduction "Linux Requirements are really vague")
-  - **Debian:** all
-  - **Ubuntu:** all
+  - Default pkg mgr is **apt** (Debian|Elementary OS|Ubuntu)
 
 **TODO:** Generic .tar.gz for larger OS footprint
 
@@ -30,6 +29,11 @@ smartgit_tmp: "/tmp"
 smartgit_dmg_url: "{{ smartgit_mirror }}/smartgit-macosx-{{ smartgit_version }}.dmg"
 smartgit_dmg_tmp: "{{ smartgit_tmp }}/smartgit-macosx-{{ smartgit_version }}.dmg"
 smartgit_dmg_mount: "/Volumes/SmartGit {{ smartgit_version | replace('_', '.') }}"
+
+# --- apt defaults (Debian, Elementary, Ubuntu, etc) ---
+smartgit_deb_url: "{{ smartgit_mirror }}/smartgit-{{ smartgit_version }}.deb"
+smartgit_tmp_deb: "{{ smartgit_tmp }}/smartgit-{{ smartgit_version }}.deb"
+
 ```
 
 Dependencies

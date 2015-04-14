@@ -1,0 +1,17 @@
+---
+# Apt tasks file for ansible-role-smartgit
+
+- name: "deb | Check for SmartGit installation"
+  stat: path=/usr/share/smartgit/bin/smartgit.sh
+  register: smargit_bin
+
+
+- name: "deb | Download SmartGit's .deb file" 
+  get_url: url="{{ smartgit_deb_url }}" dest="{{ smartgit_deb_tmp }}"
+  when: not smargit_bin.stat.exists
+
+
+- name: "deb | Install SmartGit"
+  apt: deb="{{ smartgit_deb_tmp }}"
+  when: not smargit_bin.stat.exists
+    

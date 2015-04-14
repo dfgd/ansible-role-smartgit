@@ -14,15 +14,10 @@
 # -------------
 # Verify installed
 # -------------
-- include: setup-Debian.yml
+- include: setup-deb.yml
   sudo: Yes
-  when: smartgit_pkg_install_using == 'Debian_dpkg'
+  when: ansible_pkg_mgr == 'apt'
 
 - include: setup-dmg.yml
   sudo: Yes
   when: ansible_distribution == 'MacOSX'
-
-- include: setup-Ubuntu.yml
-  sudo: Yes
-  when: smartgit_pkg_install_using == 'Ubuntu_apt'
-  
