@@ -4,3 +4,14 @@
 smartgit_pkg_install_using: 
 smartgit_pkg_url: 
 smartgit_dir_download: 
+
+# --- Remote Sources ---
+smartgit_mirror: "http://www.syntevo.com/downloads/smartgit"
+smartgit_version: "6_5_7"
+
+# --- Local Destinations ---
+smartgit_tmp: "/tmp"
+
+# --- apt defaults (Debian, Elementary, Ubuntu, etc) ---
+smartgit_deb_url: "{{ smartgit_mirror }}/smartgit-{{ smartgit_version }}.deb"
+smartgit_tmp_deb: "{{ smartgit_tmp }}/smartgit-{{ smartgit_version }}.deb"
