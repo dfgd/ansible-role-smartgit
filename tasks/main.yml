@@ -1,23 +1,16 @@
 ---
 # tasks file for ansible-role-smartgit
 
-# -------------
-# Include variables
-# -------------
-- name: Get most specific variables avaiable
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}.yml"
-    - "{{ ansible_os_family }}.yml"
-    - "{{ ansible_system }}.yml"
 
-# -------------
-# Verify installed
-# -------------
+- fail: msg="The SmartGit role currently only supports Linux+apt or Mac OS X."
+  when: ansible_pkg_mgr != 'apt' and ansible_distribution !='MacOSX'
+
+
 - include: setup-deb.yml
   sudo: Yes
   when: ansible_pkg_mgr == 'apt'
 
+  
 - include: setup-dmg.yml
   sudo: Yes
   when: ansible_distribution == 'MacOSX'
