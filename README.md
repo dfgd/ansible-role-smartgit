@@ -18,23 +18,26 @@ Requirements
 Role Variables
 --------------
 
-OS-level details should have you covered, but just in case
-
 ```yaml
-smartgit_pkg_install_using: ( Debian_dpkg | MacOSX_homebrew | Ubuntu_apt )
-smartgit_pkg_url: ( 'ppa:eugenesan/ppa' | 'http://www.syntevo.com/downloads/smartgit/smartgit-6_5_6.deb' )
-smartgit_dir_download: /tmp 
+# --- Remote Sources ---
+smartgit_mirror: "http://www.syntevo.com/downloads/smartgit"
+smartgit_version: "6_5_7"
+
+# --- Local Destinations ---
+smartgit_tmp: "/tmp"
+
+# --- Mac OS X defaults (dmg file) ---
+smartgit_dmg_url: "{{ smartgit_mirror }}/smartgit-macosx-{{ smartgit_version }}.dmg"
+smartgit_dmg_tmp: "{{ smartgit_tmp }}/smartgit-macosx-{{ smartgit_version }}.dmg"
+smartgit_dmg_mount: "/Volumes/SmartGit {{ smartgit_version | replace('_', '.') }}"
 ```
 
 Dependencies
 ------------
 
-- **Darwin (Mac OS X)**: homebrew
 - **Linux**: JRE 1.7+, git
 
-**TODO:** Java & Git dependency handling.
-
-**NOTE TO SELF:** OS X already includes JRE and Git dependencies
+**TODO:** Linux Java & Git dependency handling.
 
 Example Playbook
 -------------------------

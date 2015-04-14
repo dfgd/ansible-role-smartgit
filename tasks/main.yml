@@ -18,9 +18,9 @@
   sudo: Yes
   when: smartgit_pkg_install_using == 'Debian_dpkg'
 
-- include: setup-MacOSX.yml
+- include: setup-dmg.yml
   sudo: Yes
-  when: smartgit_pkg_install_using == 'MacOSX_homebrew'
+  when: ansible_distribution == 'MacOSX'
 
 - include: setup-Ubuntu.yml
   sudo: Yes
