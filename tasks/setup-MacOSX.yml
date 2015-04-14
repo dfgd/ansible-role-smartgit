@@ -1,7 +1,0 @@
----
-# Mac OS X tasks file for ansible-role-smartgit
-
-- name: MacOSX | ensure SmartGit present
-  homebrew_cask:
-    name: smartgit
-    state: present

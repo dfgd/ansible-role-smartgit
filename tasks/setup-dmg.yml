@@ -1,0 +1,26 @@
+---
+# Mac OS X tasks file for ansible-role-smartgit
+
+- name: "dmg | Check for Smartgit installation" 
+  stat: path="/Applications/SmartGit.app"
+  register: smargit_app
+
+
+- name: "dmg | Download SmartGit's .dmg file"
+  get_url: url="{{ smartgit_dmg_url }}" dest="{{ smartgit_dmg_tmp }}"
+  when: not smargit_app.stat.exists
+
+
+- name: "dmg | Mount SmartGit's image"
+  command: hdiutil attach {{ smartgit_dmg_tmp }} chdir={{ smartgit_tmp }}
+  when: not smargit_app.stat.exists
+
+
+- name: "dmg | Copy SmartGit's app to Applications directory"
+  copy: src="{{ smartgit_dmg_mount }}/SmartGit.app" dest="/Applications" mode=755 
+  when: not smargit_app.stat.exists  
+
+
+- name: "dmg | Unmount SmartGit's image"
+  command: hdiutil detach "{{ smartgit_dmg_mount }}/"
+  when: not smargit_app.stat.exists
