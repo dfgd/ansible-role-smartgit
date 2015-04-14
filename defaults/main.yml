@@ -4,3 +4,15 @@
 smartgit_pkg_install_using: 
 smartgit_pkg_url: 
 smartgit_dir_download: 
+
+# --- Remote Sources ---
+smartgit_mirror: "http://www.syntevo.com/downloads/smartgit"
+smartgit_version: "6_5_7"
+
+# --- Local Destinations ---
+smartgit_tmp: "/tmp"
+
+# --- Mac OS X defaults (dmg file) ---
+smartgit_dmg_url: "{{ smartgit_mirror }}/smartgit-macosx-{{ smartgit_version }}.dmg"
+smartgit_dmg_tmp: "{{ smartgit_tmp }}/smartgit-macosx-{{ smartgit_version }}.dmg"
+smartgit_dmg_mount: "/Volumes/SmartGit {{ smartgit_version | replace('_', '.') }}"
