@@ -1,13 +1,12 @@
 ---
 # tasks file for ansible-role-smartgit
 
-# -------------
-# Verify installed
-# -------------
+
 - include: setup-deb.yml
   sudo: Yes
   when: ansible_pkg_mgr == 'apt'
 
+  
 - include: setup-dmg.yml
   sudo: Yes
   when: ansible_distribution == 'MacOSX'
