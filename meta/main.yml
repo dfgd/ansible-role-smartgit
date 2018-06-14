@@ -7,10 +7,7 @@ galaxy_info:
   platforms:
    - name: MacOSX
      versions:
-     - Lion
-     - Mountain Lion
-     - Mavericks
-     - Yosemite
+     - all
    - name: Ubuntu
      versions:
      - all
