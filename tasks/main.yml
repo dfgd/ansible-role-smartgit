@@ -3,7 +3,7 @@
 
 
 - fail: msg="The SmartGit role currently only supports Linux+apt or Mac OS X."
-  when: ansible_pkg_mgr != 'apt' and ansible_distribution !='MacOSX'
+  when: ansible_pkg_mgr != 'apt' and ansible_distribution !='MacOSX' and ansible_os_family != "RedHat"
 
 
 - include: setup-deb.yml
@@ -14,3 +14,7 @@
 - include: setup-dmg.yml
   sudo: Yes
   when: ansible_distribution == 'MacOSX'
+
+- import_tasks: setup-targz.yml
+  when:
+    - ansible_os_family == "RedHat"

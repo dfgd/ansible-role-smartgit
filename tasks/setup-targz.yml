@@ -1,0 +1,26 @@
+---
+# tar.gz tasks file for ansible-role-smartgit
+
+- name: "el | Check for SmartGit installation"
+  stat: path=/opt/smartgit/bin/smartgit.sh
+  register: smargit_bin
+
+
+- name: "el | Download SmartGit's .deb file" 
+  get_url: url="{{ smartgit_targz_url }}" dest="{{ smartgit_targz_tmp }}"
+  when: not smargit_bin.stat.exists
+
+
+- name: el | install SmartGit via tarball file
+  unarchive:
+    src: "{{ smartgit_targz_tmp }}"
+    dest: "/opt/"
+    owner: root
+    group: root
+    mode: "go-w"
+    copy: no
+
+
+- name: el | Create link
+  command: ln -s /opt/smartgit/bin/smartgit.sh /usr/local/bin/smartgit
+    

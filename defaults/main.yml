@@ -16,3 +16,7 @@ smartgit_dmg_mount: "/Volumes/SmartGit {{ smartgit_version | replace('_', '.') }
 # --- apt defaults (Debian, Elementary, Ubuntu, etc) ---
 smartgit_deb_url: "{{ smartgit_mirror }}/smartgit-{{ smartgit_version }}.deb"
 smartgit_deb_tmp: "{{ smartgit_tmp }}/smartgit-{{ smartgit_version }}.deb"
+
+# --- tar.gz default other OS ---
+smartgit_targz_url: "{{ smartgit_mirror }}/smartgit-linux-{{ smartgit_version }}.tar.gz"
+smartgit_targz_tmp: "{{ smartgit_tmp }}/smartgit-linux-{{ smartgit_version }}.tar.gz"
